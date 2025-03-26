@@ -73,7 +73,7 @@ namespace Snake
         {
             foreach (var segment in Body)
             {
-                if (segment.xPosition == Head.xPosition && segment.yPosition == Head.yPosition)
+                if (segment.xPosition.Equals(Head.xPosition) && segment.yPosition.Equals(Head.yPosition))
                     return true;
             }
             return false;
@@ -197,8 +197,8 @@ namespace Snake
             }
 
             // Kontrola, zda had snědl bobulku
-            if (snake.Head.xPosition == berry.X && snake.Head.yPosition == berry.Y)
-            {
+            if (snake.Head.xPosition.Equals(berry.X) && snake.Head.yPosition.Equals(berry.Y))
+            {   
                 score++;
                 berry.SetNewPosition(randomGenerator, screenWidth, screenHeight);
             }
